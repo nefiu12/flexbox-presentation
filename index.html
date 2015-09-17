@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Flexbox - The Flexible Box Layout</title>
+
+		<meta name="description" content="Presentation to explain concepts about flexbox.">
+		<meta name="author" content="Nefi Urena">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Flexbox</h1>
+					<h3>The Flexible Box Module</h3>
+					<p>
+						<small>Created by <a href="#">Nefi Urena</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Intention</h2>
+					<p>
+						Providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word "flex").
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Container</h2>
+						<p>Element in where the flexible items are placed.</p>
+						<br>
+						<img width="500" height="auto" data-src="https://cdn.css-tricks.com/wp-content/uploads/2014/05/flex-container.svg" alt="container">
+					</section>
+					<section>
+						<h2>display</h2>
+						<pre>
+							<code data-trim contenteditable>
+.container {
+
+	display: flex; /* or inline-flex */
+
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>flex-direction</h2>
+						<img width="500" height="auto" data-src="https://cdn.css-tricks.com/wp-content/uploads/2014/05/flex-direction1.svg" alt="flex-direction">
+						<pre>
+							<code data-trim contenteditable>
+.container {
+
+ 	flex-direction: row | row-reverse | column | column-reverse;
+
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>flex-wrap</h2>
+						<img width="500" height="auto" data-src="https://cdn.css-tricks.com/wp-content/uploads/2014/05/flex-wrap.svg">
+						<pre>
+							<code data-trim contenteditable>
+.container{
+
+  flex-wrap: nowrap | wrap | wrap-reverse;
+
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>flex-flow</h2>
+						<p>
+							This is a shorthand flex-direction and flex-wrap properties.
+						</p>
+					</section>
+					<section>
+						<h2>justify-content</h2>
+						<img width="310" height="auto" data-src="https://cdn.css-tricks.com/wp-content/uploads/2013/04/justify-content.svg">
+						<pre>
+							<code data-trim contenteditable>
+.container {
+
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>align-items</h2>
+						<img width="310" height="auto" data-src="https://cdn.css-tricks.com/wp-content/uploads/2014/05/align-items.svg">
+						<pre>
+							<code data-trim contenteditable>
+.container {
+
+  align-items: flex-start | flex-end | center | baseline | stretch;
+
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>align-content</h2>
+						<img width="310" height="auto" data-src="https://cdn.css-tricks.com/wp-content/uploads/2013/04/align-content.svg">
+						<pre>
+							<code data-trim contenteditable>
+.container {
+
+  align-items: flex-start | flex-end | center | baseline | stretch;
+  
+}
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Items</h2>
+						<p>
+							Flexible items within a container with a flex display.
+						</p>
+						<br>
+						<img width="500" height="auto" data-src="https://cdn.css-tricks.com/wp-content/uploads/2014/05/flex-items.svg" alt="items">
+					</section>
+					<section>
+						<h2>order</h2>
+						<img width="500" height="auto" data-src="https://cdn.css-tricks.com/wp-content/uploads/2013/04/order-2.svg" alt="order">
+						<pre>
+							<code data-trim contenteditable>
+.item {
+  order: [integer];
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>flex-grow</h2>
+						<img width="500" height="auto" data-src="https://cdn.css-tricks.com/wp-content/uploads/2014/05/flex-grow.svg" alt="flex-grow">
+						<pre>
+							<code data-trim contenteditable>
+.item {
+  flex-grow: [number]; /* default 0 */
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>flex-shrink</h2>
+						<p>
+							This defines the ability for a flex item to shrink if necessary.
+						</p>
+						<pre>
+							<code data-trim contenteditable>
+.item {
+  flex-shrink: [number]; /* default 1 */
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>flex-basis</h2>
+						<p>
+							This defines the default size of an element before the remaining space is distributed.
+						</p>
+						<pre>
+							<code data-trim contenteditable>
+.item {
+  flex-basis: [length] | auto; /* default auto */
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>flex</h2>
+						<p>
+							This is the shorthand for flex-grow, flex-shrink and flex-basis combined.
+						</p>
+						<pre>
+							<code data-trim contenteditable>
+.item {
+  flex: none | [ ['flex-grow'] ['flex-shrink']? || ['flex-basis'] ] /* default 0 1 auto */
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>align-self</h2>
+						<img width="500" height="auto" data-src="https://cdn.css-tricks.com/wp-content/uploads/2014/05/align-self.svg" alt="align-self">
+						<pre>
+							<code data-trim contenteditable>
+.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Crossbrowsing</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Chrome</th>
+								<th>Safari</th>
+								<th>Firefox</th>
+								<th>Opera</th>
+								<th>IE</th>
+								<th>Android</th>
+								<th>iOS</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>21+ (new)</td>
+								<td>3.1+ (old)</td>
+								<td>2-21 (old)</td>
+								<td>12.1+ (new)</td>
+								<td>10 (tweener)</td>
+								<td>2.1+ (old)</td>
+								<td>3.2+ (old)</td>
+							</tr>
+							<tr>
+								<td>20- (old)</td>
+								<td>6.1+ (new)</td>
+								<td>22+ (new)</td>
+								<td></td>
+								<td>11+ (new)</td>
+								<td>4.4+ (new)</td>
+								<td>7.1+ (new)</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<section>
+						<h2>Prefixes</h2>
+						<pre>
+							<code data-trim contenteditable>
+.page-wrap {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+ }
+							</code>
+						</pre>
+					</section>
+					<section>
+						<pre>
+							<code data-trim contenteditable>
+.main-content {
+  width: 60%;
+}
+.main-nav,
+.main-sidebar {
+  -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;         /* OLD - Firefox 19- */
+  width: 20%;               /* For old syntax, otherwise collapses. */
+  -webkit-flex: 1;          /* Chrome */
+  -ms-flex: 1;              /* IE 10 */
+  flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<pre>
+							<code data-trim contenteditable>
+.main-content {
+  -webkit-box-ordinal-group: 2;   /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-ordinal-group: 2;      /* OLD - Firefox 19- */
+  -ms-flex-order: 2;              /* TWEENER - IE 10 */
+  -webkit-order: 2;               /* NEW - Chrome */
+  order: 2;                       /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.main-nav {
+  -webkit-box-ordinal-group: 1;  
+  -moz-box-ordinal-group: 1;     
+  -ms-flex-order: 1;     
+  -webkit-order: 1;  
+  order: 1;
+}
+.main-sidebar {
+  -webkit-box-ordinal-group: 3;  
+  -moz-box-ordinal-group: 3;     
+  -ms-flex-order: 3;     
+  -webkit-order: 3;  
+  order: 3;
+}
+							</code>
+						</pre>
+					</section>
+				</section>
+				
+
+				<section>
+					<section id="fragments">
+						<h2>Fallback</h2>
+						<p class="fragment">Modernizr</p>
+					</section>
+					<section>
+						<pre>
+							<code data-trim contenteditable>
+/* legacy Flexbox fallback */
+
+.no-flexbox section {
+	display: -webkit-box;
+	display: -moz-box;
+
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+}
+
+.no-flexbox nav {
+	padding: 1rem;
+	width: 20%;
+}
+
+.no-flexbox article {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+}
+
+.no-flexbox article p {
+	float: left;
+}
+
+.no-flexbox article img {
+	display: block;
+	width: 200px;
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<pre>
+							<code data-trim contenteditable>
+.no-flexbox-legacy nav, .no-flexbox-legacy article {
+	float: left;
+}
+
+.no-flexbox-legacy nav {
+	width: 20%;
+}
+
+.no-flexbox-legacy article {
+	width: 36%;
+}
+
+.no-flexbox article img {
+	float: left;
+}
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Examples</h2>
+					</section>
+					<section>
+						<a href="http://codepen.io/anon/pen/VvarLQ" target="_blank">Menu with flexbox</a>
+					</section>
+					<section>
+						<a href="http://codepen.io/anon/pen/RWajed" target="_blank">Flexbox layout</a>
+					</section>
+				</section>
+
+				<section>
+					<h2>Resources</h2>
+					<ul>
+						<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Guide To Flexbox</a></li>
+						<li><a href="http://shouldiprefix.com/#flexbox" target="_blank">Prefixes</a></li>
+						<li><a href="https://dev.opera.com/articles/advanced-cross-browser-flexbox/#fallbacks" target="_blank">Fallback</a></li>
+						<li><a href="http://the-echoplex.net/flexyboxes/" target="_blank">Flexy Boxes</a></li>
+					</ul>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
